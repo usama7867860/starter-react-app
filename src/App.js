@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { Home } from './components/Pages/Home';
+import { NoPage } from './components/Pages/NoPage';
+import { Services } from './components/Pages/Services';
 
 function App() {
   return (
-    <div className="App">
-      This is Home page
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
